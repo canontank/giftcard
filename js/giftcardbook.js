@@ -64,7 +64,6 @@ function setDataList(rows) {
         }
         dataList.push(data);
     }
-    console.log(dataList);
 }
 
 function initYearSelect() {
@@ -255,7 +254,6 @@ function setTitle(table, titleArray) {
 }
 
 function setContents(table, valueArray) {
-    console.log(valueArray);
     for (var value of valueArray) {
         var tr = ($('<tr/>'));
         for (var i = 0; i < value.length; i++) {
