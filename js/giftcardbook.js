@@ -4,9 +4,8 @@ var year = today.getFullYear();
 var month = getMonthStr(today.getMonth() + 1);
 
 var keyList = new Array();
-var titleList1 = new Array('날짜', '카드', '판매처', '충전처', '종류');
+var titleList = new Array('날짜', '카드', '판매처', '충전처', '종류');
 var cashKeyList = new Array('원가', '단가', '수량');
-var titleList2 = new Array();
 
 $(function() {
     setKeyList();
@@ -15,7 +14,7 @@ $(function() {
 });
 
 function setKeyList() {
-    var totalKeyList = new Array(titleList1, cashKeyList, titleList2);
+    var totalKeyList = new Array(titleList, cashKeyList);
     for (var totalKey of totalKeyList) {
         for (var key of totalKey) {
             keyList.push(key);
@@ -146,8 +145,6 @@ function setAccountBook11() {
     var valueArray = new Array();
     for (var card of cardArray) {
         var gift = 0;
-        var happy = 0;
-        var booknlife = 0;
         var c = 0;
         var d = 0;
         for (var data of dataList) {
@@ -155,11 +152,6 @@ function setAccountBook11() {
                 continue;
             if (card != data[1])
                 continue;
-            if (data[4] == '해피머니') {
-                happy += (data[5] * data[7]);
-            } else if (data[4] == '북앤라이프') {
-                booknlife += (data[5] * data[7]);
-            }
             gift += (data[5] * data[7]);
             c += (data[6] * data[7]);
             d += (data[5] * 0.92) * data[7];
