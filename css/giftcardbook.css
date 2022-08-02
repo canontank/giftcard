@@ -46,11 +46,12 @@ select {
 }
 
 .account1 {
-	    width : 520px;
+	    width : 540px;
 	    font-weight : 600;
+	    overflow-y : scroll;
 }
 
-@media ( max-width : 400px ) {
+@media ( max-width : 540px ) {
     .account1 {
         width : 100%;
         font-weight : 600;

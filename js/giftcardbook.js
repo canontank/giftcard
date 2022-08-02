@@ -136,12 +136,13 @@ function setYearMonth() {
 function setAccountBook() {
     setAccountBook11();
     setAccountBook12();
+	setAccountBook13();
     setAccountBook2();
 }
 
 function setAccountBook11() {
+	var titleArray = new Array('구분', '상품권', '거래가', '마진');
     var cardArray = new Array('텔로', '딥에코', '욜로', '딥온', '쿠키', '010pay', '주거래', '4tune');
-    var titleArray = new Array('구분', '상품권', '거래가', '마진');
     var valueArray = new Array();
     for (var card of cardArray) {
         var gift = 0;
@@ -158,12 +159,12 @@ function setAccountBook11() {
         }
         valueArray.push(new Array(card, gift, c, d - c));
     }
-    setAccountDiv1("#bank", '[ 카드 ]', titleArray, valueArray);
+    setAccountDiv1("#book11", '[ 카드 ]', titleArray, valueArray);
 }
 
 function setAccountBook12() {
+	var titleArray = new Array('구분', '해피머니', '북앤라이프', '합계');
     var chargeArray = new Array('팔라고', '페이코', '모바일팝', '하나머니');
-    var titleArray = new Array('구분', '해피머니', '북앤라이프', '합계');
     var valueArray = new Array();
     for (var charge of chargeArray) {
         var happy = 0;
@@ -183,7 +184,19 @@ function setAccountBook12() {
         }
         valueArray.push(new Array(charge, happy, booknlife, sum));
     }
-    setAccountDiv1("#card", '[ 충전처 ]', titleArray, valueArray);
+    setAccountDiv1("#book12", '[ 충전처 ]', titleArray, valueArray);
+}
+
+function setAccountBook13() {
+	var titleArray = new Array('구분', '해피(월)', '북앤(월)', '비고(일)');
+    var chargeArray = new Array('팔라고', '페이코', '모바일팝', '하나머니');
+	var valueArray = new Array(
+		new Array(chargeArray[0], 2000000, 2000000, '각각 200만'),
+		new Array(chargeArray[1], 2000000, 2000000, '각각 100만'),
+		new Array(chargeArray[2], 2000000, '무제한', '합계 100만'),
+		new Array(chargeArray[3], '불가', 2000000, '해피 100만')
+	);
+    setAccountDiv1("#book13", '[ 충전한도 ]', titleArray, valueArray);
 }
 
 function setAccountBook2() {
@@ -191,7 +204,7 @@ function setAccountBook2() {
     for (var data of dataList) {
         if (!isThisMonth(data))
             continue;
-        valueArray.push(getBookRow(data));
+		valueArray.push(data);
     }
     setAccountDiv2("#gbn0", '[ 상품권 ]', valueArray);
 }
@@ -285,66 +298,6 @@ function setBookContents(table, valueArray) {
             .append($('<td/>', { align :  'right' }).append($('<font/>', { text : getCommaValue(value[7]) } )))
         );
     }
-}
-
-function getBookRow(data) {
-    var bookRow = new Array();
-    for (var i = 0; i < data.length; i++) {
-        bookRow.push(data[i]);
-    }
-    return bookRow;
-}
-
-function getIndexByKey(key) {
-    for (var i = 0; i < keyList.length; i++) {
-        if (keyList[i] == key)
-            return i;
-    }
-    return -1;
-}
-
-function getBankSumValue(index) {
-    var value = 0;
-    for (var data of dataList) {
-        if (getDateNum(getDate(data)) > getDateNum(getThisDate()))
-            continue;
-        value += data[index];
-    }
-    return value;
-}
-
-function getCardSumValue(gbn, index, date) {
-    var value = 0;
-    for (var data of dataList) {
-        if (data[1] != gbn)
-            continue;
-        if (getDateNum(getDate(data)) != getDateNum(date))
-            continue;
-        value += data[index];
-    }
-    return value;
-}
-
-function getGbnSumValue(date, gbn) {
-    var value = 0;
-    for (var data of dataList) {
-        if (getDateNum(getDate(data)) != getDateNum(date))
-            continue;
-        if (data[2] != gbn)
-            continue;
-        value += getRowSumValue(data);
-    }
-    return value;
-}
-
-function getRowSumValue(data) {
-    var value = 0;
-    for (var i = 0; i < keyList.length; i++) {
-        if (cashKeyList.includes(keyList[i])) {
-            value += data[i];
-        }
-    }
-    return value;
 }
 
 function getTable() {
