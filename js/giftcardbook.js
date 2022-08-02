@@ -140,7 +140,7 @@ function setAccountBook() {
 }
 
 function setAccountBook11() {
-    var cardArray = new Array('텔로', '딥에코', '욜로', '딥온', '쿠키', '주거래', '4tune', '팔라고', '한국은행', '나마네');
+    var cardArray = new Array('텔로', '딥에코', '욜로', '딥온', '쿠키', '010pay', '주거래', '4tune');
     var titleArray = new Array('구분', '상품권', '거래가', '마진');
     var valueArray = new Array();
     for (var card of cardArray) {
