@@ -134,15 +134,15 @@ function setYearMonth() {
 }
 
 function setAccountBook() {
-    setAccountBook11();
-    setAccountBook12();
+	setAccountBook11();
+	setAccountBook12();
 	setAccountBook13();
-    setAccountBook2();
+	setAccountBook2();
 }
 
 function setAccountBook11() {
 	var titleArray = new Array('구분', '상품권', '거래가', '마진');
-    var cardArray = new Array('텔로', '딥에코', '욜로', '딥온', '쿠키', '010pay', '주거래', '4tune');
+    var cardArray = new Array('텔로', '딥에코', '욜로', '딥온', '쿠키', '쿠키런', '람다람', '총몇명', '야코', '010pay', '주거래', '4tune');
     var valueArray = new Array();
     for (var card of cardArray) {
         var gift = 0;
