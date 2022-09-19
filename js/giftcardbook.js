@@ -279,11 +279,11 @@ function setBookTitle(table) {
 		.append($('<th/>', { align : 'center', 'width' : '16%' }).append($('<font/>', { text : '날짜' } )))
 		.append($('<th/>', { align : 'center', 'width' : '12%' }).append($('<font/>', { text : '카드' } )))
         .append($('<th/>', { align : 'center', 'width' : '12%' }).append($('<font/>', { text : '판매처' } )))
-        .append($('<th/>', { align : 'center', 'width' : '12%' }).append($('<font/>', { text : '충전처' } )))
+        .append($('<th/>', { align : 'center', 'width' : '14%' }).append($('<font/>', { text : '충전처' } )))
         .append($('<th/>', { align : 'center', 'width' : '12%' }).append($('<font/>', { text : '종류' } )))
         .append($('<th/>', { align : 'center', 'width' : '12%' }).append($('<font/>', { text : '원가' } )))
         .append($('<th/>', { align : 'center', 'width' : '12%' }).append($('<font/>', { text : '단가' } )))
-        .append($('<th/>', { align : 'center', 'width' : '12%' }).append($('<font/>', { text : '수량' } )))
+        .append($('<th/>', { align : 'center', 'width' : '10%' }).append($('<font/>', { text : '수량' } )))
 	);
 }
 
