@@ -189,7 +189,7 @@ function setAccountBook12() {
 }
 
 function setAccountBook13() {
-    var titleArray = new Array('구분', '해피(월)', '북앤(월)', '비고(일)');
+    var titleArray = new Array('구분', '해피(월)', '북앤(월)', '컬쳐(월)');
     var chargeArray = new Array('팔라고', '페이코', '모바일팝', '포인트로페이', '하나머니');
     var valueArray = new Array(
 		new Array(chargeArray[0], 2000000, 2000000, '불가'),
