@@ -164,7 +164,7 @@ function setAccountBook11() {
 
 function setAccountBook12() {
 	var titleArray = new Array('구분', '해피머니', '북앤라이프', '합계');
-    var chargeArray = new Array('팔라고', '페이코', '모바일팝', '하나머니');
+    var chargeArray = new Array('팔라고', '페이코', '모바일팝', '포인트로페이', '하나머니');
     var valueArray = new Array();
     for (var charge of chargeArray) {
         var happy = 0;
@@ -189,9 +189,9 @@ function setAccountBook12() {
 
 function setAccountBook13() {
     var titleArray = new Array('구분', '해피(월)', '북앤(월)', '비고(일)');
-    var chargeArray = new Array('팔라고', '페이코', '모바일팝', '하나머니');
+    var chargeArray = new Array('팔라고', '페이코', '모바일팝', '포인트로페이', '하나머니');
     var valueArray = new Array(
-		new Array(chargeArray[0], 2000000, 2000000, '각각 200만'),
+		new Array(chargeArray[0], 2000000, 2000000, '합계 200만'),
 		new Array(chargeArray[1], 2000000, 2000000, '각각 100만'),
 		new Array(chargeArray[2], 2000000, 3000000, '합계 100만'),
 		new Array(chargeArray[3], '불가', 2000000, '100만')
