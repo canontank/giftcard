@@ -193,7 +193,7 @@ function setAccountBook13() {
     var chargeArray = new Array('팔라고', '페이코', '모바일팝', '포인트로페이', '하나머니');
     var valueArray = new Array(
 		new Array(chargeArray[0], 2000000, 2000000, '불가'),
-		new Array(chargeArray[1], 2000000, 2000000, 500000),
+		new Array(chargeArray[1], 2000000, 2000000, 2000000),
 		new Array(chargeArray[2], 1500000, 3000000, '불가'),
 	    	new Array(chargeArray[3], '불가', 5000000, '2000000'),
 		new Array(chargeArray[4], '불가', 2000000, '불가')
